@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class FreelanceDocumentsController < ApplicationController
-  before_action :set_freelance_document, only: [:show, :update, :destroy]
+  before_action :set_freelance_document, only: %i[show update destroy]
 
   # GET /freelance_documents
   def index
@@ -39,13 +41,14 @@ class FreelanceDocumentsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_freelance_document
-      @freelance_document = FreelanceDocument.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def freelance_document_params
-      params.require(:freelance_document).permit(:title, :description, :file_url, :image_url)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_freelance_document
+    @freelance_document = FreelanceDocument.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def freelance_document_params
+    params.require(:freelance_document).permit(:title, :description, :file_url, :image_url)
+  end
 end
