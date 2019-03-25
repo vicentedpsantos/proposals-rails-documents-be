@@ -14,4 +14,8 @@ This project is supposed to be used with the [Proposals Angular Front-End](https
 ## Instructions
 - Clone project
 - Run 'rails db:create', 'rails db:migrate'
-- rails s puma -p 5002 (or whatever port you want to have this on)
+- rails s puma -p 4201 (or whatever port you want to have this on)
+
+## Important
+- Since this app will require CORS, you need to define which domains are allowed to perform requests to this app.
+- In order to define these domains, head to config/initializers/cors.rb and set your domains in origins
